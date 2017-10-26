@@ -7,6 +7,6 @@ RUN mkdir -p /opt/android-sdk-linux/ndk && \
   apt-get update && \
   apt-get install -y rsync ant
 
-RUN apt-get install -y python-pip ca-certificates && pip install b2
+RUN apt-get install -y python3-pip ca-certificates && pip3 install b2
 
 CMD ["/bin/bash"]
