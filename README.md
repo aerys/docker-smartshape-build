@@ -73,7 +73,16 @@ make -j4 config=html5_release
 You should be in a directory containing 'smartshape-app/'.
 
 ```
-docker run -it --rm -v "$PWD":/data --name smartshape-ui aerysinnovation/smartshape-build:ui
+docker run -dit -v "$PWD":/data --name smartshape-ui aerysinnovation/smartshape-build:ui
+```
+
+Then enter the container and build the app:
+
+```
+docker exec -it smartshape-ui bash
+cd /data/smartshape-app
+npm install --no-bin-links
+grunt build-app # or grunt build-app-production or grunt watch-app
 ```
 
 ## Use Docker on Windows with cmder
@@ -91,6 +100,7 @@ Then add a new predefined task by clicking on the '+'.
 Rename it 'docker'
 In task parameter, you can add `/icon "path\to\DockerToolbox\docker-quickstart-terminal.ico"`.
 And in commands, you have to add:
+
 ```
 "path\to\cmder\vendor\git-for-windows\bin\bash.exe --login -i "path\to\DockerToolbox\start.sh" -new_console:d:"path\to\DockerToolbox""
 ```
@@ -99,7 +109,16 @@ Then save settings.
 
 Reclick on the bottom right corner arrow and choose `docker`.
 Wait until the end.
-Check on VirtualBox if the virtual machine 'default' is running. Docker is running on it.
+
+Now configure the VM.
+
+```
+docker-machine rm default
+docker-machine create -d virtualbox --virtualbox-cpu-count=2 --virtualbox-memory=4096 --virtualbox-disk-size=50000 default
+```
+
+Check on VirtualBox if the virtual machine 'default' is running and if the settings are correct.
 Now you can use docker on cmder.
 
 You can see the procedure here: https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/
+And the configuration of the VM here" https://github.com/crops/docker-win-mac-docs/wiki/Windows-Instructions-(Docker-Toolbox)
