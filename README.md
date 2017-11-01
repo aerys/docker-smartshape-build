@@ -15,7 +15,6 @@ Then enter the container and build the engine:
 docker exec -it smartshape-android bash
 cd /data/smartshape-engine
 export MINKO_HOME="$PWD"
-${MINKO_HOME}/script/install_jni.sh
 ./script/solution_gmake_min.sh
 make -j4 config=android_release
 ```
@@ -36,7 +35,6 @@ Then enter the container and build the engine:
 docker exec -it smartshape-android bash
 cd /data/smartshape-engine
 export MINKO_HOME="$PWD"
-${MINKO_HOME}/script/install_jni.sh
 ./script/solution_gmake_min.sh
 make -j4 config=android_release
 ```
