@@ -2,6 +2,8 @@ before_script:
   - docker info
 
 build_image:
+  tags:
+    - virtualbox
   only:
     - html5
   script:
