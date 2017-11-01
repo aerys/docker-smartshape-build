@@ -17,10 +17,6 @@ Then enter the container and build the engine:
 docker exec -it smartshape-android bash
 cd /data/smartshape-engine
 export MINKO_HOME="$PWD"
-<<<<<<< HEAD
-=======
-${MINKO_HOME}/script/install_jni.sh
->>>>>>> git.aerys.in/master
 ./script/solution_gmake_min.sh
 make -j4 config=android_release
 ```
@@ -42,23 +38,12 @@ Then enter the container and build the engine:
 docker exec -it smartshape-android bash
 cd /data/smartshape-engine
 export MINKO_HOME="$PWD"
-<<<<<<< HEAD
-=======
-${MINKO_HOME}/script/install_jni.sh
->>>>>>> git.aerys.in/master
 ./script/solution_gmake_min.sh
 make -j4 config=android_release
 ```
 
 Because the container is running privileged mode, you might want to `chown` the build artifacts.
 
-<<<<<<< HEAD
-
-### Use Docker on Windows with cmder
-
-Install docker toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
-The installation path must *not* contain spaces.
-=======
 ## HTML5
 
 ### Usage
@@ -102,7 +87,6 @@ grunt build-app # or grunt build-app-production or grunt watch-app
 
 Install docker toolbox: https://docs.docker.com/toolbox/toolbox_install_windows/
 The installation path must **not** contain spaces.
->>>>>>> git.aerys.in/master
 
 Install cmder: http://cmder.net/
 Launch cmder.
@@ -114,10 +98,7 @@ Then add a new predefined task by clicking on the '+'.
 Rename it 'docker'
 In task parameter, you can add `/icon "path\to\DockerToolbox\docker-quickstart-terminal.ico"`.
 And in commands, you have to add:
-<<<<<<< HEAD
-=======
 
->>>>>>> git.aerys.in/master
 ```
 "path\to\cmder\vendor\git-for-windows\bin\bash.exe --login -i "path\to\DockerToolbox\start.sh" -new_console:d:"path\to\DockerToolbox""
 ```
@@ -126,12 +107,6 @@ Then save settings.
 
 Reclick on the bottom right corner arrow and choose `docker`.
 Wait until the end.
-<<<<<<< HEAD
-Check on VirtualBox if the virtual machine 'default' is running. Docker is running on it.
-Now you can use docker on cmder.
-
-You can see the procedure here: https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/
-=======
 
 Now configure the VM.
 
@@ -144,5 +119,4 @@ Check on VirtualBox if the virtual machine 'default' is running and if the setti
 Now you can use docker on cmder.
 
 You can see the procedure here: https://goblincoding.com/2016/05/24/adding-docker-terminal-to-cmder-on-windows/
-And the configuration of the VM here" https://github.com/crops/docker-win-mac-docs/wiki/Windows-Instructions-(Docker-Toolbox)
->>>>>>> git.aerys.in/master
+And the configuration of the VM here: https://github.com/crops/docker-win-mac-docs/wiki/Windows-Instructions-(Docker-Toolbox)
