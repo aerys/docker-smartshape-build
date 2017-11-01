@@ -1,0 +1,8 @@
+before_script:
+  - docker info
+
+build_image:
+  only:
+    - html5
+  script:
+    - docker build -t aerysinnovation/smartshape-build:html5 html5
